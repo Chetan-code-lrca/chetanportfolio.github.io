@@ -22,10 +22,11 @@ No build step or package installation is required. The site loads external fonts
 ```text
 .
 ├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
+├── style.css
+├── script.js
+├── .github/
+│   └── workflows/
+│       └── deploy.yml
 └── README.md
 ```
 
@@ -43,7 +44,7 @@ No build step or package installation is required. The site loads external fonts
 
 This is a static website and can be served by GitHub Pages or any static hosting service.
 
-For GitHub Pages, the repository can be published from the `main` branch with `index.html` as the site entry point.
+The repository includes a GitHub Actions deployment workflow. It publishes the repository root as the Pages artifact when changes are pushed to `main`, and it can also be started manually with `workflow_dispatch`. The deployment job requires GitHub Pages to be enabled for the repository and the `github-pages` environment to be available.
 
 ## Technologies
 
